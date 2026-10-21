@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>澶村儚澶囬€?路 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Silkscreen:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f5f0; --paper-2:#efece4; --paper-3:#e6e2d8;
+  --ink:#33312c; --ink-2:#6b675d; --ink-3:#a09b8e;
+  --rule:#dbd6c9; --rule-2:#c9c3b3;
+  --moss:#5f7050; --moss-soft:#e8ebe2;
+  --desk:#ded9cd; --face:#e6e2d8; --face-ink:#33312c;
+  /* 鐢讳腑鑹?*/
+  --c-paper:#efece4; --c-pale:#dbd6c9; --c-near:#a09b8e; --c-water:#c9c3b3;
+  --c-glow:#5f7050; --c-ink:#33312c;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#161815; --paper-2:#1e211c; --paper-3:#262a23;
+    --ink:#e6e3d8; --ink-2:#a3a396; --ink-3:#6e7065;
+    --rule:#2b2f28; --rule-2:#3c4137;
+    --moss:#a3b585; --moss-soft:#262b21;
+    --desk:#0e100d; --face:#24271f; --face-ink:#d9d6cb;
+    --c-paper:#1e211c; --c-pale:#33382e; --c-near:#5d6255; --c-water:#454a3e;
+    --c-glow:#a3b585; --c-ink:#e6e3d8;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#161815; --paper-2:#1e211c; --paper-3:#262a23;
+  --ink:#e6e3d8; --ink-2:#a3a396; --ink-3:#6e7065;
+  --rule:#2b2f28; --rule-2:#3c4137;
+  --moss:#a3b585; --moss-soft:#262b21;
+  --desk:#0e100d; --face:#24271f; --face-ink:#d9d6cb;
+  --c-paper:#1e211c; --c-pale:#33382e; --c-near:#5d6255; --c-water:#454a3e;
+  --c-glow:#a3b585; --c-ink:#e6e3d8;
+  color-scheme:dark;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  font-size:13px;line-height:1.7;
+  background:var(--desk);color:var(--ink);
+  padding:max(20px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(20px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  transition:background-color .7s ease,color .7s ease;
+}
+.wrap{max-width:940px;margin:0 auto}
+h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
+.sub{color:var(--ink-2);font-size:12.5px;margin-bottom:22px}
+.sub code{background:var(--paper-2);border:1px solid var(--rule);padding:1px 5px;font-size:11.5px}
+
+/* 鈹€鈹€ 棰勮 鈹€鈹€ */
+.preview{
+  background:var(--paper);border:1px solid var(--ink);
+  margin-bottom:26px;transition:background-color .7s ease,border-color .7s ease;
+}
+.pv-bar{
+  height:24px;background:var(--face);border-bottom:1px solid var(--ink);
+  display:flex;align-items:center;padding:0 8px;gap:7px;position:relative;
+}
+.pv-bar::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(180deg,transparent 0 3px,rgba(51,49,44,.06) 3px 4px)}
+.pv-dot{width:11px;height:11px;border:1px solid var(--ink);flex-shrink:0;position:relative;z-index:1}
+.pv-title{flex:1;text-align:center;font-family:'Silkscreen',monospace;font-size:8.5px;color:var(--face-ink);position:relative;z-index:1}
+.pv-body{display:flex;gap:22px;padding:20px;align-items:flex-start;flex-wrap:wrap}
+.pv-face{width:76px;height:76px;border:1px solid var(--ink);flex-shrink:0;position:relative;overflow:hidden}
+.pv-face svg{display:block;width:100%;height:100%}
+.pv-face.big{width:120px;height:120px}
+.pv-meta{flex:1;min-width:200px}
+.pv-name{font-family:'Silkscreen',monospace;font-size:13px;margin-bottom:10px}
+.pv-name .at{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-3);font-weight:400}
+.pv-line{color:var(--ink-2);font-size:12.5px}
+.pv-line .hl{color:var(--moss)}
+.pv-pick{font-size:12px;color:var(--ink-3);margin-top:12px}
+.pv-pick b{color:var(--moss);font-weight:500}
+
+/* 鈹€鈹€ 缃戞牸 鈹€鈹€ */
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media (max-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:460px){.grid{grid-template-columns:repeat(2,1fr)}}
+.card{
+  background:var(--paper);border:1px solid var(--rule-2);
+  padding:12px;cursor:pointer;text-align:center;
+  transition:border-color .4s ease,background .4s ease,transform .4s ease;
+}
+.card:hover{border-color:var(--moss);transform:translateY(-2px)}
+.card.on{border-color:var(--moss);background:var(--moss-soft)}
+.card:focus-visible{outline:1px solid var(--moss);outline-offset:2px}
+.card svg{display:block;width:100%;height:auto;image-rendering:pixelated;shape-rendering:crispEdges}
+.card-num{font-family:'Silkscreen',monospace;font-size:8px;color:var(--ink-3);margin-top:9px;letter-spacing:.06em}
+.card-name{font-size:11.5px;color:var(--ink);margin-top:3px}
+.card-desc{font-size:10.5px;color:var(--ink-3);margin-top:2px;line-height:1.5}
+
+/* 鈹€鈹€ 宸ュ叿鏉?鈹€鈹€ */
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.btn{
+  font-family:inherit;font-size:11.5px;background:transparent;
+  border:1px solid var(--rule-2);color:var(--ink-2);
+  padding:5px 13px;cursor:pointer;transition:all .4s ease;
+}
+.btn:hover{border-color:var(--moss);color:var(--moss);background:var(--moss-soft)}
+.btn.on{border-color:var(--moss);color:var(--moss);background:var(--moss-soft)}
+
+/* 鈹€鈹€ 鍍忕礌缃戞牸杈呭姪 鈹€鈹€ */
+.gridlines svg{background-image:
+  linear-gradient(rgba(128,128,128,.16) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(128,128,128,.16) 1px,transparent 1px) !important;
+  background-size:6.25% 6.25% !important;}
+.gridlines .card svg,.gridlines .pv-face svg{
+  background-image:linear-gradient(rgba(128,128,128,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(128,128,128,.18) 1px,transparent 1px);
+  background-size:6.25% 6.25%;
+}
+.note{margin-top:26px;padding-top:16px;border-top:1px solid var(--rule);color:var(--ink-2);font-size:12px}
+.note b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>澶村儚澶囬€?路 10</h1>
+  <p class="sub">鍚屼竴濂?16脳16 鍍忕礌缃戞牸涓庡ⅷ鑹?token锛屾樇澶滀袱濂椾富棰橀兘鑳界敤銆傜偣涓€涓嵆鍙湪涓嬫柟棰勮銆?/p>
+
+  <div class="preview">
+    <div class="pv-bar">
+      <span class="pv-dot"></span>
+      <span class="pv-title">鈻?LofiSu 鈥?-zsh 鈥?96脳24</span>
+    </div>
+    <div class="pv-body">
+      <div class="pv-face" id="pvFace"></div>
+      <div class="pv-meta">
+        <div class="pv-name">LofiSu <span class="at">@LofiSu</span></div>
+        <div class="pv-line">Learning is a Lifelong Journey.</div>
+        <div class="pv-line">AI Full-Stack Engineer 路 <span class="hl">Agentic Infra</span></div>
+        <div class="pv-line">@ByteDance 路 Chengdu 鈫?BeiJing 路 China</div>
+        <div class="pv-pick">宸查€?<b id="pvName">鈥?/b> <span id="pvNum"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tools">
+    <button class="btn on" id="btnGrid">鍍忕礌缃戞牸</button>
+    <button class="btn" id="btnTheme">鍒囨樇澶?/button>
+    <button class="btn" id="btnBig">鏀惧ぇ棰勮</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="note">
+    <b>鎬庝箞鐢細</b>鍛婅瘔鎴戠紪鍙峰氨琛岋紙渚嬪銆岀敤 3銆嶏級銆?br>
+    鎯冲井璋冧篃鍙互璇达紝姣斿銆? 鍙风殑缂哄彛鍐嶅ぇ涓€鐐广€嶃€?0 鍙锋妸灏惧反鍘绘帀銆嶁€斺€旈兘鏄嚑涓?<code>rect</code> 鐨勪簨銆?  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* 鑹插悕 鈫?token锛歩nk 鏈€寮哄壀褰?路 near 涓伆 路 pale 娣″奖 路 water 姘寸嚎 路 glow 鑻?路 paper 搴?*/
+  var AV = [
+    { n:'鏋北姘?, d:'鐭充笌鑻旓紙褰撳墠锛?, p:[
+      ['pale',2,9,4,1],['pale',1,10,6,1],['pale',9,8,3,1],['pale',8,9,6,1],
+      ['mid',5,12,3,1],['mid',10,12,2,1],
+      ['glow',6,11,1,1],['glow',11,11,1,1],
+      ['water',0,14,16,1]
+    ]},
+    { n:'鐭崇伅绗?, d:'涓庡彸涓嬭閭ｇ洀鍛煎簲', p:[
+      ['ink',7,0,2,1],['ink',6,1,4,1],
+      ['mid',4,2,8,1],['mid',3,3,10,1],['mid',2,4,12,1],
+      ['pale',4,5,8,4],
+      ['glow',6,6,4,2],
+      ['mid',7,9,2,4],
+      ['ink',5,13,6,1],['ink',4,14,8,1]
+    ]},
+    { n:'鏈?, d:'涓婂鸡鏈堜笌杩滃北', p:[
+      ['glow',4,3,3,1],['glow',3,4,5,1],['glow',3,5,5,1],['glow',3,6,5,1],['glow',4,7,3,1],
+      ['mid',11,10,4,1],['mid',12,9,2,1],
+      ['pale',0,12,16,1],
+      ['water',0,14,16,1]
+    ]},
+    { n:'鏉?, d:'涓夊眰鏋濈殑鏉炬爲', p:[
+      ['glow',7,2,2,1],
+      ['mid',5,3,6,1],['mid',4,4,8,1],
+      ['ink',7,5,2,1],
+      ['mid',3,6,10,1],['mid',2,7,12,1],
+      ['ink',7,8,2,1],
+      ['mid',4,9,8,1],['mid',3,10,10,1],
+      ['ink',7,11,2,1],['ink',7,12,2,1],
+      ['ink',6,13,4,1],['ink',5,14,6,1]
+    ]},
+    { n:'鍐嗙浉', d:'涓€绗斿渾锛屽彸涓嬬暀鍙?, p:[
+      ['ink',8,2,1,1],
+      ['ink',5,3,2,1],['ink',10,3,2,1],
+      ['ink',4,4,2,1],['ink',11,4,2,1],
+      ['ink',3,5,2,1],['ink',12,5,2,1],
+      ['ink',2,6,2,1],['ink',13,6,2,1],
+      ['ink',1,7,2,1],['ink',13,7,2,1],
+      ['ink',1,8,2,1],['ink',13,8,2,1],
+      ['ink',1,9,2,1],['ink',13,9,2,1],
+      ['ink',2,10,2,1],['ink',12,10,2,1],
+      ['ink',3,11,3,1],
+      ['ink',5,12,2,1],
+      ['ink',7,13,2,1]
+    ]},
+    { n:'瀵屽＋', d:'闆《涓庝簯娴?, p:[
+      ['pale',7,3,2,1],['pale',6,4,4,1],
+      ['pale',6,5,4,1],['pale',5,5,1,1],['pale',10,5,1,1],
+      ['mid',5,6,6,1],['mid',5,7,6,1],
+      ['mid',4,8,8,1],['mid',4,9,8,1],
+      ['mid',3,10,10,1],['mid',3,11,10,1],
+      ['mid',2,12,12,1],['mid',1,13,14,1],
+      ['water',0,14,16,1]
+    ]},
+    { n:'绔?, d:'涓夌锛岃妭澶勭暀鐧?, p:[
+      ['glow',5,2,3,1],['glow',9,0,3,1],['glow',9,3,2,1],['glow',13,3,2,1],
+      ['glow',0,5,3,1],['glow',0,8,3,1],
+      ['mid',3,3,2,11],['mid',7,1,2,13],['mid',11,4,2,10],
+      ['paper',3,6,2,1],['paper',3,10,2,1],
+      ['paper',7,4,2,1],['paper',7,9,2,1],
+      ['paper',11,7,2,1],['paper',11,11,2,1],
+      ['pale',0,14,16,1]
+    ]},
+    { n:'槌ュ眳', d:'涓ゆ煴涓€绗?, p:[
+      ['ink',1,1,2,1],['ink',13,1,2,1],
+      ['ink',1,2,14,1],
+      ['ink',3,4,10,1],
+      ['ink',7,5,2,1],
+      ['ink',4,5,2,10],['ink',10,5,2,10]
+    ]},
+    { n:'姘寸磱', d:'灞傚彔鐨勬尝绾?, p:[
+      ['mid',1,3,3,1],['mid',5,3,3,1],['mid',9,3,3,1],['mid',13,3,2,1],
+      ['mid',3,5,3,1],['mid',7,5,3,1],['mid',11,5,3,1],
+      ['mid',1,7,3,1],['mid',5,7,3,1],['mid',9,7,3,1],['mid',13,7,2,1],
+      ['mid',3,9,3,1],['mid',7,9,3,1],['mid',11,9,3,1],
+      ['mid',1,11,3,1],['mid',5,11,3,1],['mid',9,11,3,1],['mid',13,11,2,1],
+      ['mid',3,13,3,1],['mid',7,13,3,1],['mid',11,13,3,1]
+    ]},
+    { n:'鐚?, d:'绔潗锛屽熬灏栦笂鍗?, p:[
+      ['ink',5,3,1,1],['ink',10,3,1,1],
+      ['ink',4,4,2,1],['ink',10,4,2,1],
+      ['ink',5,5,6,1],
+      ['ink',4,6,8,1],
+      ['glow',6,6,1,1],['glow',9,6,1,1],
+      ['ink',4,7,8,1],
+      ['ink',5,8,6,1],
+      ['ink',4,9,8,1],['ink',4,10,8,1],
+      ['ink',3,11,10,1],['ink',3,12,10,1],['ink',3,13,10,1],
+      ['mid',12,9,1,1],['mid',13,10,1,2],['mid',12,12,1,1],['mid',13,13,1,1]
+    ]}
+  ];
+
+  function svgOf(a, pad){
+    var r = a.p.map(function(g){
+      return '<rect x="'+g[1]+'" y="'+g[2]+'" width="'+g[3]+'" height="'+g[4]+'" fill="var(--c-'+g[0]+')"/>';
+    }).join('');
+    return '<svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">' +
+      '<rect width="16" height="16" fill="var(--c-paper)"/>' + r + '</svg>';
+  }
+
+  var grid = document.getElementById('grid');
+  var pvFace = document.getElementById('pvFace');
+  var pvName = document.getElementById('pvName');
+  var pvNum  = document.getElementById('pvNum');
+  var cur = 0;
+
+  AV.forEach(function(a, i){
+    var c = document.createElement('div');
+    c.className = 'card' + (i === 0 ? ' on' : '');
+    c.tabIndex = 0;
+    c.setAttribute('role', 'button');
+    c.innerHTML = svgOf(a) +
+      '<div class="card-num">' + String(i + 1).padStart(2, '0') + '</div>' +
+      '<div class="card-name">' + a.n + '</div>' +
+      '<div class="card-desc">' + a.d + '</div>';
+    c.addEventListener('click', function(){ pick(i); });
+    c.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); pick(i); }
+    });
+    grid.appendChild(c);
+  });
+
+  function pick(i){
+    cur = i;
+    var cards = grid.querySelectorAll('.card');
+    for(var k = 0; k < cards.length; k++) cards[k].classList.toggle('on', k === i);
+    pvFace.innerHTML = svgOf(AV[i]);
+    pvName.textContent = AV[i].n;
+    pvNum.textContent = '锛? + String(i + 1).padStart(2, '0') + '锛?;
+  }
+  pick(0);
+
+  document.getElementById('btnGrid').addEventListener('click', function(){
+    document.body.classList.toggle('gridlines');
+    this.classList.toggle('on');
+  });
+  document.getElementById('btnTheme').addEventListener('click', function(){
+    var r = document.documentElement;
+    var cur2 = r.getAttribute('data-theme');
+    if(!cur2) cur2 = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    r.setAttribute('data-theme', cur2 === 'dark' ? 'light' : 'dark');
+    this.textContent = (r.getAttribute('data-theme') === 'dark') ? '鍒囧埌鏄? : '鍒囧埌澶?;
+  });
+  document.getElementById('btnBig').addEventListener('click', function(){
+    pvFace.classList.toggle('big');
+    this.classList.toggle('on');
+  });
+})();
+</script>
+</body>
+</html>
