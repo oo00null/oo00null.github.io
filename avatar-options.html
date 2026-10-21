@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>澶村儚澶囬€?路 10</title>
+<title>头像备选 · 10</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Silkscreen:wght@400&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
   --rule:#dbd6c9; --rule-2:#c9c3b3;
   --moss:#5f7050; --moss-soft:#e8ebe2;
   --desk:#ded9cd; --face:#e6e2d8; --face-ink:#33312c;
-  /* 鐢讳腑鑹?*/
+  /* 画中色 */
   --c-paper:#efece4; --c-pale:#dbd6c9; --c-near:#a09b8e; --c-water:#c9c3b3;
   --c-glow:#5f7050; --c-ink:#33312c;
   color-scheme:light;
@@ -54,7 +54,7 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
 .sub{color:var(--ink-2);font-size:12.5px;margin-bottom:22px}
 .sub code{background:var(--paper-2);border:1px solid var(--rule);padding:1px 5px;font-size:11.5px}
 
-/* 鈹€鈹€ 棰勮 鈹€鈹€ */
+/* ── 预览 ── */
 .preview{
   background:var(--paper);border:1px solid var(--ink);
   margin-bottom:26px;transition:background-color .7s ease,border-color .7s ease;
@@ -79,7 +79,7 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
 .pv-pick{font-size:12px;color:var(--ink-3);margin-top:12px}
 .pv-pick b{color:var(--moss);font-weight:500}
 
-/* 鈹€鈹€ 缃戞牸 鈹€鈹€ */
+/* ── 网格 ── */
 .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
 @media (max-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:460px){.grid{grid-template-columns:repeat(2,1fr)}}
@@ -96,7 +96,7 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
 .card-name{font-size:11.5px;color:var(--ink);margin-top:3px}
 .card-desc{font-size:10.5px;color:var(--ink-3);margin-top:2px;line-height:1.5}
 
-/* 鈹€鈹€ 宸ュ叿鏉?鈹€鈹€ */
+/* ── 工具条 ── */
 .tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
 .btn{
   font-family:inherit;font-size:11.5px;background:transparent;
@@ -106,7 +106,7 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
 .btn:hover{border-color:var(--moss);color:var(--moss);background:var(--moss-soft)}
 .btn.on{border-color:var(--moss);color:var(--moss);background:var(--moss-soft)}
 
-/* 鈹€鈹€ 鍍忕礌缃戞牸杈呭姪 鈹€鈹€ */
+/* ── 像素网格辅助 ── */
 .gridlines svg{background-image:
   linear-gradient(rgba(128,128,128,.16) 1px,transparent 1px),
   linear-gradient(90deg,rgba(128,128,128,.16) 1px,transparent 1px) !important;
@@ -121,52 +121,53 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
 </head>
 <body>
 <div class="wrap">
-  <h1>澶村儚澶囬€?路 10</h1>
-  <p class="sub">鍚屼竴濂?16脳16 鍍忕礌缃戞牸涓庡ⅷ鑹?token锛屾樇澶滀袱濂椾富棰橀兘鑳界敤銆傜偣涓€涓嵆鍙湪涓嬫柟棰勮銆?/p>
+  <h1>头像备选 · 10</h1>
+  <p class="sub">同一套 16×16 像素网格与墨色 token，昼夜两套主题都能用。点一个即可在下方预览。</p>
 
   <div class="preview">
     <div class="pv-bar">
       <span class="pv-dot"></span>
-      <span class="pv-title">鈻?LofiSu 鈥?-zsh 鈥?96脳24</span>
+      <span class="pv-title">▢ oo00null — -zsh — 96×24</span>
     </div>
     <div class="pv-body">
       <div class="pv-face" id="pvFace"></div>
       <div class="pv-meta">
-        <div class="pv-name">LofiSu <span class="at">@LofiSu</span></div>
+        <div class="pv-name">oo00null <span class="at">@oo00null</span></div>
         <div class="pv-line">Learning is a Lifelong Journey.</div>
-        <div class="pv-line">AI Full-Stack Engineer 路 <span class="hl">Agentic Infra</span></div>
-        <div class="pv-line">@ByteDance 路 Chengdu 鈫?BeiJing 路 China</div>
-        <div class="pv-pick">宸查€?<b id="pvName">鈥?/b> <span id="pvNum"></span></div>
+        <div class="pv-line">AI Full-Stack Engineer · <span class="hl">Agentic Infra</span></div>
+        <div class="pv-line">@ByteDance · Chengdu → BeiJing · China</div>
+        <div class="pv-pick">已选 <b id="pvName">—</b> <span id="pvNum"></span></div>
       </div>
     </div>
   </div>
 
   <div class="tools">
-    <button class="btn on" id="btnGrid">鍍忕礌缃戞牸</button>
-    <button class="btn" id="btnTheme">鍒囨樇澶?/button>
-    <button class="btn" id="btnBig">鏀惧ぇ棰勮</button>
+    <button class="btn on" id="btnGrid">像素网格</button>
+    <button class="btn" id="btnTheme">切昼夜</button>
+    <button class="btn" id="btnBig">放大预览</button>
   </div>
 
   <div class="grid" id="grid"></div>
 
   <div class="note">
-    <b>鎬庝箞鐢細</b>鍛婅瘔鎴戠紪鍙峰氨琛岋紙渚嬪銆岀敤 3銆嶏級銆?br>
-    鎯冲井璋冧篃鍙互璇达紝姣斿銆? 鍙风殑缂哄彛鍐嶅ぇ涓€鐐广€嶃€?0 鍙锋妸灏惧反鍘绘帀銆嶁€斺€旈兘鏄嚑涓?<code>rect</code> 鐨勪簨銆?  </div>
+    <b>怎么用：</b>告诉我编号就行（例如「用 3」）。<br>
+    想微调也可以说，比如「5 号的缺口再大一点」「10 号把尾巴去掉」——都是几个 <code>rect</code> 的事。
+  </div>
 </div>
 
 <script>
 (function(){
   'use strict';
 
-  /* 鑹插悕 鈫?token锛歩nk 鏈€寮哄壀褰?路 near 涓伆 路 pale 娣″奖 路 water 姘寸嚎 路 glow 鑻?路 paper 搴?*/
+  /* 色名 → token：ink 最强剪影 · near 中灰 · pale 淡影 · water 水线 · glow 苔 · paper 底 */
   var AV = [
-    { n:'鏋北姘?, d:'鐭充笌鑻旓紙褰撳墠锛?, p:[
+    { n:'枯山水', d:'石与苔（当前）', p:[
       ['pale',2,9,4,1],['pale',1,10,6,1],['pale',9,8,3,1],['pale',8,9,6,1],
       ['mid',5,12,3,1],['mid',10,12,2,1],
       ['glow',6,11,1,1],['glow',11,11,1,1],
       ['water',0,14,16,1]
     ]},
-    { n:'鐭崇伅绗?, d:'涓庡彸涓嬭閭ｇ洀鍛煎簲', p:[
+    { n:'石灯笼', d:'与右下角那盏呼应', p:[
       ['ink',7,0,2,1],['ink',6,1,4,1],
       ['mid',4,2,8,1],['mid',3,3,10,1],['mid',2,4,12,1],
       ['pale',4,5,8,4],
@@ -174,13 +175,13 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
       ['mid',7,9,2,4],
       ['ink',5,13,6,1],['ink',4,14,8,1]
     ]},
-    { n:'鏈?, d:'涓婂鸡鏈堜笌杩滃北', p:[
+    { n:'月', d:'上弦月与远山', p:[
       ['glow',4,3,3,1],['glow',3,4,5,1],['glow',3,5,5,1],['glow',3,6,5,1],['glow',4,7,3,1],
       ['mid',11,10,4,1],['mid',12,9,2,1],
       ['pale',0,12,16,1],
       ['water',0,14,16,1]
     ]},
-    { n:'鏉?, d:'涓夊眰鏋濈殑鏉炬爲', p:[
+    { n:'松', d:'三层枝的松树', p:[
       ['glow',7,2,2,1],
       ['mid',5,3,6,1],['mid',4,4,8,1],
       ['ink',7,5,2,1],
@@ -190,7 +191,7 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
       ['ink',7,11,2,1],['ink',7,12,2,1],
       ['ink',6,13,4,1],['ink',5,14,6,1]
     ]},
-    { n:'鍐嗙浉', d:'涓€绗斿渾锛屽彸涓嬬暀鍙?, p:[
+    { n:'円相', d:'一笔圆，右下留口', p:[
       ['ink',8,2,1,1],
       ['ink',5,3,2,1],['ink',10,3,2,1],
       ['ink',4,4,2,1],['ink',11,4,2,1],
@@ -204,7 +205,7 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
       ['ink',5,12,2,1],
       ['ink',7,13,2,1]
     ]},
-    { n:'瀵屽＋', d:'闆《涓庝簯娴?, p:[
+    { n:'富士', d:'雪顶与云海', p:[
       ['pale',7,3,2,1],['pale',6,4,4,1],
       ['pale',6,5,4,1],['pale',5,5,1,1],['pale',10,5,1,1],
       ['mid',5,6,6,1],['mid',5,7,6,1],
@@ -213,7 +214,7 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
       ['mid',2,12,12,1],['mid',1,13,14,1],
       ['water',0,14,16,1]
     ]},
-    { n:'绔?, d:'涓夌锛岃妭澶勭暀鐧?, p:[
+    { n:'竹', d:'三竿，节处留白', p:[
       ['glow',5,2,3,1],['glow',9,0,3,1],['glow',9,3,2,1],['glow',13,3,2,1],
       ['glow',0,5,3,1],['glow',0,8,3,1],
       ['mid',3,3,2,11],['mid',7,1,2,13],['mid',11,4,2,10],
@@ -222,14 +223,14 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
       ['paper',11,7,2,1],['paper',11,11,2,1],
       ['pale',0,14,16,1]
     ]},
-    { n:'槌ュ眳', d:'涓ゆ煴涓€绗?, p:[
+    { n:'鳥居', d:'两柱一笠', p:[
       ['ink',1,1,2,1],['ink',13,1,2,1],
       ['ink',1,2,14,1],
       ['ink',3,4,10,1],
       ['ink',7,5,2,1],
       ['ink',4,5,2,10],['ink',10,5,2,10]
     ]},
-    { n:'姘寸磱', d:'灞傚彔鐨勬尝绾?, p:[
+    { n:'水紋', d:'层叠的波纹', p:[
       ['mid',1,3,3,1],['mid',5,3,3,1],['mid',9,3,3,1],['mid',13,3,2,1],
       ['mid',3,5,3,1],['mid',7,5,3,1],['mid',11,5,3,1],
       ['mid',1,7,3,1],['mid',5,7,3,1],['mid',9,7,3,1],['mid',13,7,2,1],
@@ -237,7 +238,7 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
       ['mid',1,11,3,1],['mid',5,11,3,1],['mid',9,11,3,1],['mid',13,11,2,1],
       ['mid',3,13,3,1],['mid',7,13,3,1],['mid',11,13,3,1]
     ]},
-    { n:'鐚?, d:'绔潗锛屽熬灏栦笂鍗?, p:[
+    { n:'猫', d:'端坐，尾尖上卷', p:[
       ['ink',5,3,1,1],['ink',10,3,1,1],
       ['ink',4,4,2,1],['ink',10,4,2,1],
       ['ink',5,5,6,1],
@@ -287,7 +288,7 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
     for(var k = 0; k < cards.length; k++) cards[k].classList.toggle('on', k === i);
     pvFace.innerHTML = svgOf(AV[i]);
     pvName.textContent = AV[i].n;
-    pvNum.textContent = '锛? + String(i + 1).padStart(2, '0') + '锛?;
+    pvNum.textContent = '（' + String(i + 1).padStart(2, '0') + '）';
   }
   pick(0);
 
@@ -300,7 +301,7 @@ h1{font-family:'Silkscreen',monospace;font-size:15px;margin-bottom:6px}
     var cur2 = r.getAttribute('data-theme');
     if(!cur2) cur2 = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     r.setAttribute('data-theme', cur2 === 'dark' ? 'light' : 'dark');
-    this.textContent = (r.getAttribute('data-theme') === 'dark') ? '鍒囧埌鏄? : '鍒囧埌澶?;
+    this.textContent = (r.getAttribute('data-theme') === 'dark') ? '切到昼' : '切到夜';
   });
   document.getElementById('btnBig').addEventListener('click', function(){
     pvFace.classList.toggle('big');
