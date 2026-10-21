@@ -1,0 +1,58 @@
+{
+  "_readme": "鏀硅繖涓枃浠跺氨鑳芥敼涓婚〉鍐呭銆傚瓨鐩樺悗鍒锋柊娴忚鍣ㄥ嵆鍙€傚€奸噷鐨?<em> 鍜?<b> 鏄厑璁哥殑 HTML锛涙枃瀛楁湰韬惈鍗曞紩鍙蜂笉鐢ㄨ浆涔夛紙JSON 鐢ㄥ弻寮曞彿锛夈€?,
+
+  "profile": {
+    "name": "LofiSu",
+    "handle": "@LofiSu",
+    "host": "macbook",
+    "windowTitle": "鈻?LofiSu 鈥?-zsh 鈥?96脳24",
+    "repoBase": "https://github.com/LofiSu/",
+    "bio": [
+      "Learning is a Lifelong Journey.",
+      "AI Full-Stack Engineer 路 <span class=\"hl\">Agentic Infra</span>",
+      "@ByteDance 路 Chengdu 鈫?BeiJing 路 China"
+    ],
+    "stats": "<b>1.4k</b> followers 路 <b>44</b> following 路 <b>73</b> public repos",
+    "statusRight": "73 repos 路 1.4k followers",
+    "placeholder": "杈撳叆鍛戒护    help 鏌ョ湅鍏ㄩ儴    T 鏄煎    S 闈欓粯",
+    "spirit": ["闈?, "涓€鎭?, "灞变笉璇?, "姘磋嚜娴?, "鏉鹃", "鏃犱簨", "浣欑櫧", "闁?, "鏈?, "澶滈暦"]
+  },
+
+  "repos": [
+    ["LLM-NoteBook", "TypeScript", "18", "2026", "澶фā鍨嬬畻娉曠瑪璁?鈥?浠?Transformer 鍘熺悊鍒板井璋冦€佹帹鐞嗕笌璇勬祴"],
+    ["Agent_Kimi_ClaudeCode", "HTML", "17", "2026", "鎵嬫妸鎵嬫惌寤?DeepResearch Agent 鈥?Kimi K2 涓?Claude Code 瀹炴垬"],
+    ["myBlog", "JavaScript", "15", "鎸佺画", "Susu's Tech Blog 鈥?宸ョ▼瀹炶返涓殑韪╁潙涓庢柟娉曡娌夋穩"],
+    ["recruiting-skills", "Python", "10", "宸ュ叿闆?, "researcher-recruiting-skill 鈥?鎷涜仒鍒ゆ柇鏍囧噯娌夋穩涓哄彲澶嶇敤鎶€鑳?],
+    ["InBrowserMcp", "TypeScript", "9", "杩涜涓?, "娴忚鍣ㄥ唴杩愯鐨?MCP 瀹炵幇 鈥?鐪佹帀鏈湴杩涚▼"],
+    ["LoopLab", "TypeScript", "2", "杩涜涓?, "鐞嗚В銆佽瘎浼板苟鏀硅繘 Agent loop 鐨勫紑婧愬钩鍙?]
+  ],
+
+  "experience": [
+    ["ByteDance 路 DouyinAI", "<em>AI4SE 路 Agentic RL 路 Infra</em> 鈥?鏅鸿兘浣撳己鍖栧涔犵殑鏁版嵁銆佽缁冧笌鎺ㄧ悊鍩虹璁炬柦", "2025.12 鈥?now"],
+    ["ByteDance 路 E-commerce Tech", "鐪熷疄娴侀噺涓嬬殑閾捐矾闂涓庡伐绋嬫晥鐜?, "2025.05 鈥?2025.09"],
+    ["ByteDance 路 Live Streaming Tech", "鐩存挱鍦烘櫙鐨勭ǔ瀹氭€т笌鎬ц兘浼樺寲", "2025.01 鈥?2025.05"],
+    ["Bilibili 路 OGV Tech", "鐣墽涓庡奖瑙嗕笟鍔＄嚎宸ョ▼瀹炶返", "2024.07 鈥?2024.11"]
+  ],
+
+  "oss": [
+    ["ByteDance / DeerFlow", "SuperAgent harness 鈥?researches, codes, and creates", "m", "maintainer"],
+    ["Apache Fory", "Apache 杞欢鍩洪噾浼氬鍖栭」鐩?鈥?搴忓垪鍖栨鏋?, "", "committer"],
+    ["鑵捐鐘€楦?路 寮€婧愬疄璺靛", "Tencent Rhino Bird Open Source Practical Award", "", "award"],
+    ["Tencent Omi", "鑵捐鍓嶇妗嗘灦 鈥?璺ㄦ鏋剁粍浠舵柟妗?, "", "contributor"],
+    ["Alibaba Higress 路 OpenYurt 路 Spring AI Alibaba", "浜戝師鐢熺綉鍏炽€佽竟缂樿绠椾笌 AI 搴旂敤妗嗘灦", "", "contributor"]
+  ],
+
+  "langs": [
+    ["TypeScript", 40],
+    ["JavaScript", 34],
+    ["Java", 17],
+    ["Other", 9]
+  ],
+
+  "links": [
+    ["github.com/LofiSu", "https://github.com/LofiSu"],
+    ["Tech Blog", "https://github.com/LofiSu/myBlog"],
+    ["fory.apache.org", "https://fory.apache.org/"],
+    ["Awards.md", "https://github.com/LofiSu/LofiSu/blob/main/Awards.md"]
+  ]
+}
