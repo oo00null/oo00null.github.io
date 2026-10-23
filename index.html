@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>oo00null — zsh</title>
+<title>**** — zsh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Silkscreen:wght@400&display=swap" rel="stylesheet">
@@ -452,7 +452,7 @@ body.quiet .screen{padding-bottom:56px}
   <div class="titlebar">
     <span class="tb-box" id="tbBox" title="静默模式 (S)"></span>
     <span class="tb-theme" id="tbTheme" title="切换昼夜 (T)"></span>
-    <span class="tb-title" id="tbTitle">▢ oo00null — -zsh — 96×24</span>
+    <span class="tb-title" id="tbTitle">▢ **** — -zsh — 96×24</span>
     <span class="tb-right">
       <span class="tb-z" id="tbTop" title="回到顶部"></span>
       <span class="tb-z" id="tbBot" title="到底部"></span>
@@ -462,7 +462,7 @@ body.quiet .screen{padding-bottom:56px}
   <div class="screen" id="screen">
     <div class="screen-in" id="feed">
 
-      <div class="ln"><span class="ps1">oo00null@<span class="host">macbook</span><span class="sym">:~$</span></span> <span class="cmd">whoami</span></div>
+      <div class="ln"><span class="ps1">****@<span class="host">****</span><span class="sym">:~$</span></span> <span class="cmd">whoami</span></div>
 
       <div class="head">
         <div class="face" aria-hidden="true">
@@ -507,7 +507,7 @@ body.quiet .screen{padding-bottom:56px}
           </svg>
         </div>
         <div class="head-meta">
-          <div class="head-name">oo00null <span class="at">@oo00null</span></div>
+          <div class="head-name">**** <span class="at">@****</span></div>
           <div class="head-bio">
             <div class="head-line">载入中…</div>
           </div>
@@ -516,7 +516,7 @@ body.quiet .screen{padding-bottom:56px}
     </div>
 
     <div class="input-line">
-      <span class="ps1 ps1-fixed">oo00null@<span class="host">macbook</span><span class="sym">:~$</span></span>
+      <span class="ps1 ps1-fixed">****@<span class="host">****</span><span class="sym">:~$</span></span>
       <input id="cmd" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
              placeholder="输入命令    help 查看全部    T 昼夜    S 静默" aria-label="命令输入">
       <span class="caret" aria-hidden="true"></span>
@@ -576,7 +576,7 @@ body.quiet .screen{padding-bottom:56px}
   var reduce  = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var mqDark  = matchMedia('(prefers-color-scheme: dark)');
 
-  var PS1 = '<span class="ps1">oo00null@<span class="host">macbook</span><span class="sym">:~$</span></span> ';
+  var PS1 = '<span class="ps1">****@<span class="host">****</span><span class="sym">:~$</span></span> ';
 
   /* ══ 昼夜 ══ */
   var DAYNAME = { light:'昼', dark:'夜' };
@@ -774,10 +774,10 @@ body.quiet .screen{padding-bottom:56px}
             '○ Tab 补全 · ↑↓ 翻历史 · T 昼夜 · S 静默 · / 聚焦'].join('\n'));
     },
     whoami: function(){
-      text(['● oo00null',
+      text(['● ****',
             '· AI Full-Stack Engineer · Agentic Infra',
-            '· @ByteDance · Chengdu → BeiJing · China',
-            '· 1.4k followers · 44 following · 73 public repos'].join('\n'));
+            '· **** · **** → **** · ****',
+            '· **** followers · **** following · **** public repos'].join('\n'));
     },
     ls: function(){ text('● 精选项目'); renderRepos(); },
     cat: function(arg){
@@ -785,7 +785,7 @@ body.quiet .screen{padding-bottom:56px}
       if(arg === 'oss'){ text('● 开源贡献与奖项'); renderOSS(); return; }
       text('～ cat: ' + (arg || '') + ': 没有这个文件。试试 experience 或 oss');
     },
-    tokei: function(){ text('● 语言构成 · 73 个公开仓库'); renderLangs(); },
+    tokei: function(){ text('● 语言构成 · **** 个公开仓库'); renderLangs(); },
     contact: function(){ text('● 联系方式'); renderContact(); },
     dark: function(){ setMode('dark', true); },
     light: function(){ setMode('light', true); },
@@ -927,7 +927,7 @@ body.quiet .screen{padding-bottom:56px}
     boot().then(function(ok){
       if(!ok) return;                       /* 载入失败时错误提示已经打过了 */
       setTimeout(function(){
-        text(['● ' + (P.name || 'oo00null') + ' — ' + (P.bio && P.bio[1] ? P.bio[1].replace(/<[^>]+>/g, '') : 'AI Full-Stack Engineer'),
+        text(['● ' + (P.name || '****') + ' — ' + (P.bio && P.bio[1] ? P.bio[1].replace(/<[^>]+>/g, '') : 'AI Full-Stack Engineer'),
               '· 输入 help 看命令，或点下面的按钮',
               '～ Tab 补全 · ↑↓ 翻历史 · T 昼夜 · S 静默'].join('\n'));
         blank();
